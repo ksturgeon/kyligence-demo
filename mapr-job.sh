@@ -29,7 +29,7 @@ echo "CLDB Master is ready, continuing startup for $MAPR_CLUSTER ..."
 # Put your customer demo stuff below this line to continue to be executed or in the "demo" directory under customer-jobs.sh
 
 # Simple test to list volume informaiton over REST API - This is a code place to start putting your code, hint, hint.
-curl -sSk -X POST -u ${MAPR_ADMIN}:${MAPR_ADMIN_PASSWORD} ""${MCS_URL}/rest/volume/list"" >> ~/test.json
+curl -sSk -X POST -u ${MAPR_ADMIN}:${MAPR_ADMIN_PASS} ""${MCS_URL}/rest/volume/list"" >> ~/test.json
 
 # You should always end with a good exit :)
 exit 0
