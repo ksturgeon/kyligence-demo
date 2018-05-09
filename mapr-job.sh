@@ -5,10 +5,11 @@ MCS_PORT=${MCS_PORT:-8443}
 MCS_URL="https://${MCS_HOST}:${MCS_PORT}"
 MAPR_ADMIN=${MAPR_ADMIN:-mapr}
 MAPR_ADMIN_PASSWORD=${MAPR_ADMIN_PASSWORD:-mapr522301}
-echo MCS_URL=$MCS_URL >> ~/.profile
-echo MAPR_ADMIN=$MAPR_ADMIN >> ~/.profile
-echo MAPR_ADMIN_PASSWORD=$MAPR_ADMIN_PASSWORD >> ~/.profile
-echo MAPR_CLUSTER=$MAPR_CLUSTER >> ~/.profile
+# Below is needed in order to check if CLDB is up and running
+echo MCS_URL=$MCS_URL >> /etc/profile
+# Below is set in order to troubleshoot demo's on bash terminal sessions that you login to 
+# AFTER the scripts are run at deployment time.  Also some demo's we have created need to have our "MAPR" enviroment variables.
+cat /opt/mapr/docker/start-env.sh >> /etc/profile
 
 echo ""
 echo "MapR JOB script executing for demo, Centralized Historian."
