@@ -9,7 +9,7 @@ MAPR_ADMIN_PASSWORD=${MAPR_ADMIN_PASSWORD:-mapr522301}
 echo MCS_URL=$MCS_URL >> /etc/profile
 # Below is set in order to troubleshoot demo's on bash terminal sessions that you login to 
 # AFTER the scripts are run at deployment time.  Also some demo's we have created need to have our "MAPR" enviroment variables.
-cat /opt/mapr/docker/start-env.sh >> /etc/profile
+source /opt/mapr/docker/start-env.sh
 
 echo ""
 echo "MapR JOB script executing for demo, Centralized Historian."
