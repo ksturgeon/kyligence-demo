@@ -1,14 +1,8 @@
 #!/bin/bash
-# We need to ensure that the cluster is up and running before we start executing any scripts to setup a demo.
-MCS_HOST=${MAPR_CLDB_HOSTS:-cldb}
-MCS_PORT=${MCS_PORT:-8443}
-MCS_URL="https://${MCS_HOST}:${MCS_PORT}"
-MAPR_ADMIN=${MAPR_ADMIN:-mapr}
-MAPR_ADMIN_PASSWORD=${MAPR_ADMIN_PASSWORD:-mapr522301}
-# Below is needed in order to check if CLDB is up and running
-echo MCS_URL=$MCS_URL >> /etc/profile
 # Below loads all of the default "MapR" enviroment variables for the SE Demo cluster.
 source /opt/mapr/docker/start-env.sh
+# We need to ensure that the cluster is up and running before we start executing any scripts to setup a demo.
+MCS_URL="https://${MCS_HOST}:${MCS_PORT}"
 
 echo ""
 echo "MapR JOB script executing for demo, Centralized Historian."
