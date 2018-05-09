@@ -7,8 +7,7 @@ MAPR_ADMIN=${MAPR_ADMIN:-mapr}
 MAPR_ADMIN_PASSWORD=${MAPR_ADMIN_PASSWORD:-mapr522301}
 # Below is needed in order to check if CLDB is up and running
 echo MCS_URL=$MCS_URL >> /etc/profile
-# Below is set in order to troubleshoot demo's on bash terminal sessions that you login to 
-# AFTER the scripts are run at deployment time.  Also some demo's we have created need to have our "MAPR" enviroment variables.
+# Below loads all of the default "MapR" enviroment variables for the SE Demo cluster.
 source /opt/mapr/docker/start-env.sh
 
 echo ""
