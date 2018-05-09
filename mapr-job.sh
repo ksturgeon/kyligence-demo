@@ -5,6 +5,10 @@ MCS_PORT=${MCS_PORT:-8443}
 MCS_URL="https://${MCS_HOST}:${MCS_PORT}"
 MAPR_ADMIN=${MAPR_ADMIN:-mapr}
 MAPR_ADMIN_PASSWORD=${MAPR_ADMIN_PASSWORD:-mapr522301}
+echo MCS_URL=$MCS_URL >> ~/.profile
+echo MAPR_ADMIN=$MAPR_ADMIN >> ~/.profile
+echo MAPR_ADMIN_PASSWORD=$MAPR_ADMIN_PASSWORD >> ~/.profile
+echo MAPR_CLUSTER=$MAPR_CLUSTER >> ~/.profile
 
 echo ""
 echo "MapR JOB script executing for demo, Centralized Historian."
