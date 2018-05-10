@@ -2,9 +2,8 @@ The basic script calling works like this:
   * The node container starts up, and at the very end, it checks for the environment variable MAPR_SCRIPT_URL
   * If found, the URL is downloaded. It MUST be a ZIP file
   * The file is unzipped, the container changes to the script direct directory, and executes './mapr-job.sh'
-  * In order to execute your script the MAPR_SCRIPT_URL must be set on your container in your deployment (See the "SE Demo Cluster - "Let's Build a Demo!" google doc)
 
-## Demo Prep #
+### Demo Prep ###
 
 Put any additional prep instructions here for your demo.
 
