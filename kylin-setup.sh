@@ -6,6 +6,7 @@ sudo chown -R mapr:mapr /opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
 
 #Create prereqs
 export KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
+export SPARK_HOME=/opt/mapr/spark-2.2.1/
 hadoop fs -mkdir /kylin
 hadoop fs -chown mapr /kylin
 
