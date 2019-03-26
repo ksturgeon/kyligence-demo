@@ -6,9 +6,9 @@ sudo chown -R mapr:mapr /opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
 
 #Create prereqs
 echo "KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr" >> ~/.bashrc
-echo "SPARK_HOME=/opt/mapr/spark-2.2.1" >> ~/.bashrc
+echo "SPARK_HOME=/opt/mapr/spark/spark-2.2.1" >> ~/.bashrc
 export KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
-export SPARK_HOME=/opt/mapr/spark-2.2.1
+export SPARK_HOME=/opt/mapr/spark/spark-2.2.1
 hadoop fs -mkdir /kylin
 hadoop fs -chown mapr /kylin
 
@@ -26,8 +26,8 @@ echo "kylin.engine.spark-conf.spark.history.fs.logDirectory=maprfs:///kylin/spar
 echo "kap.storage.init-spark-at-starting=true" >> $KYLIN_HOME/conf/kylin.properties
 
 #Load sample data
-bash $KYLIN_HOME/bin/sample.sh
+$KYLIN_HOME/bin/sample.sh
 
 #Start Server
-bash $KYLIN_HOME/bin/kylin.sh start
+$KYLIN_HOME/bin/kylin.sh start
 
