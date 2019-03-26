@@ -24,8 +24,8 @@ echo "kylin.engine.spark-conf.spark.history.fs.logDirectory=maprfs:///kylin/spar
 echo "kap.storage.init-spark-at-starting=true" >> $KYLIN_HOME/conf/kylin.properties
 
 #Load sample data
-bash $KYLIN_HOME/bin/sample.sh
+source $KYLIN_HOME/bin/sample.sh
 
 #Start Server
-bash $KYLIN_HOME/bin/kylin.sh start
+source $KYLIN_HOME/bin/kylin.sh start
 
