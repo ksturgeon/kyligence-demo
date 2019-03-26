@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Copy kyligence tarball from public data
-sudo cp /public_data/kyligence/install/Kyligence-Enterprise-3.2.2.2028-GA-mapr.tar.gz /opt
-sudo tar -zxvf /opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr.tar.gz
+#sudo cp /public_data/kyligence/install/Kyligence-Enterprise-3.2.2.2028-GA-mapr.tar.gz /opt
+sudo tar -zxvf /public_data/kyligence/install/Kyligence-Enterprise-3.2.2.2028-GA-mapr.tar.gz -C /opt/
 sudo chown -R mapr:mapr /opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr.tar.gz
 
 #Create prereqs
