@@ -20,7 +20,7 @@ ln -sfn $KYLIN_HOME/conf/profile_min $KYLIN_HOME/conf/profile
 #Add properties
 echo "kylin.env.zookeeper-connect-string=mapr-zk:5181" >> $KYLIN_HOME/conf/kylin.properties
 echo "kylin.env.hdfs-working-dir=maprfs:///kylin" >> $KYLIN_HOME/conf/kylin.properties
-echo "kylin.metadata.url=kylin@jdbc,url=jdbc:mysql://mysqldb:3306/kylin?createDatabaseIfNotExist=true,username=hive,password=ChangeMe!,passwordEncrypted=false,maxActive=40,maxIdle=10,driverClassName=com.mysql.jdbc.Driver" >> $KYLIN_HOME/conf/kylin.properties
+echo "kylin.metadata.url=kylin@jdbc,url=jdbc:mysql://mysqldb:3306/kylin?createDatabaseIfNotExist=true,username=root,password=ChangeMe!,passwordEncrypted=false,maxActive=40,maxIdle=10,driverClassName=com.mysql.jdbc.Driver" >> $KYLIN_HOME/conf/kylin.properties
 echo "kylin.engine.spark-conf.spark.eventLog.dir=maprfs:///kylin/spark-history" >> $KYLIN_HOME/conf/kylin.properties
 echo "kylin.engine.spark-conf.spark.history.fs.logDirectory=maprfs:///kylin/spark-history" >> $KYLIN_HOME/conf/kylin.properties
 echo "kap.storage.init-spark-at-starting=true" >> $KYLIN_HOME/conf/kylin.properties
