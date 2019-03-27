@@ -16,6 +16,9 @@ hadoop fs -chown mapr /kylin
 rm -f $KYLIN_HOME/conf/profile
 ln -sfn $KYLIN_HOME/conf/profile_min $KYLIN_HOME/conf/profile
 
+#Copy our fixed-up kylin_hive_conf.xml
+mv $KYLIN_HOME/conf/kylin_hive_conf.xml $KYLIN_HOME/conf/bak.kylin_hive_conf.xml
+cp mapr_kylin_hive_conf.xml $KYLIN_HOME/conf/kylin_hive_conf.xml
 
 #Add properties
 echo "kylin.env.zookeeper-connect-string=mapr-zk:5181" >> $KYLIN_HOME/conf/kylin.properties
@@ -26,8 +29,8 @@ echo "kylin.engine.spark-conf.spark.history.fs.logDirectory=maprfs:///kylin/spar
 echo "kap.storage.init-spark-at-starting=true" >> $KYLIN_HOME/conf/kylin.properties
 
 #Load sample data
-$KYLIN_HOME/bin/sample.sh
+source $KYLIN_HOME/bin/sample.sh
 
 #Start Server
-$KYLIN_HOME/bin/kylin.sh start
+source $KYLIN_HOME/bin/kylin.sh start
 
