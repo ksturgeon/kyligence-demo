@@ -31,6 +31,9 @@ echo "kap.storage.init-spark-at-starting=true" >> $KYLIN_HOME/conf/kylin.propert
 #Load sample data
 source $KYLIN_HOME/bin/sample.sh
 
+#Load yelp tables into hive
+hive -f hive-table-setup.sql
+
 #Start Server
 source $KYLIN_HOME/bin/kylin.sh start
 
