@@ -7,8 +7,10 @@ sudo chown -R mapr:mapr /opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
 #Create prereqs
 echo "KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr" >> ~/.bashrc
 echo "SPARK_HOME=/opt/mapr/spark/spark-2.2.1" >> ~/.bashrc
+echo "KAFKA_HOME=/opt/mapr/kafka/kafka-1.0.1" >> ~/.bashrc
 export KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
 export SPARK_HOME=/opt/mapr/spark/spark-2.2.1
+export KAFKA_HOME=/opt/mapr/kafka/kafka-1.0.1
 hadoop fs -mkdir /kylin
 hadoop fs -chown mapr /kylin
 
