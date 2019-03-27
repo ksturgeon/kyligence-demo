@@ -7,6 +7,10 @@ maprcli volume create -name demo-files -path /demo-files -readAce 'p' -writeAce 
 maprcli volume create -name demo-tables -path /demo-tables -readAce 'p' -writeAce 'p'
 maprcli volume create -name demo-streams -path /demo-streams -readAce 'p' -writeAce 'p'
 
+#Set up Streams and topic
+maprcli stream create -path /demo-streams/tipstream -produceperm p -consumeperm p -topicperm p
+maprcli stream topic create -path /demo-streams/tipstream -topic topic1 -partitions 3
+
 #Set up tables, etc
 # Set up DB tables demo bits
 
