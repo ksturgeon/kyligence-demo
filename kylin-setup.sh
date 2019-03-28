@@ -33,12 +33,15 @@ echo "kylin.engine.spark-conf.spark.eventLog.dir=maprfs:///kylin/spark-history" 
 echo "kylin.engine.spark-conf.spark.history.fs.logDirectory=maprfs:///kylin/spark-history" >> $KYLIN_HOME/conf/kylin.properties
 echo "kap.storage.init-spark-at-starting=true" >> $KYLIN_HOME/conf/kylin.properties
 
-#Load sample data
-source $KYLIN_HOME/bin/sample.sh
+#Load sample data - uses relative paths, ugh
+cd $KYLIN_HOME/bin
+source sample.sh
 
 #Load yelp tables into hive
+cd -
 hive -f hive-table-setup.sql
 
 #Start Server
-source $KYLIN_HOME/bin/kylin.sh start
+cd $KYLIN_HOME/bin
+source kylin.sh start
 
