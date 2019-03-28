@@ -5,9 +5,9 @@ sudo tar -zxvf /public_data/kyligence/install/Kyligence-Enterprise-3.2.2.2028-GA
 sudo chown -R mapr:mapr /opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
 
 #Create prereqs
-echo "KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr" >> ~/.bashrc
-echo "SPARK_HOME=/opt/mapr/spark/spark-2.2.1" >> ~/.bashrc
-echo "KAFKA_HOME=/opt/mapr/kafka/kafka-1.0.1" >> ~/.bashrc
+echo "KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr" >> /home/mapr/.bashrc
+echo "SPARK_HOME=/opt/mapr/spark/spark-2.2.1" >> /home/mapr/.bashrc
+echo "KAFKA_HOME=/opt/mapr/kafka/kafka-1.0.1" >> /home/mapr/.bashrc
 export KYLIN_HOME=/opt/Kyligence-Enterprise-3.2.2.2028-GA-mapr
 export SPARK_HOME=/opt/mapr/spark/spark-2.2.1
 export KAFKA_HOME=/opt/mapr/kafka/kafka-1.0.1
@@ -38,7 +38,7 @@ cd $KYLIN_HOME/bin
 source sample.sh
 
 #Load yelp tables into hive
-cd -
+cd ~/kyligence-demo
 hive -f hive-table-setup.sql
 
 #Start Server
