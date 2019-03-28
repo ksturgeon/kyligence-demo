@@ -41,5 +41,6 @@ source sample.sh
 #hive -f ~/kyligence-demo/hive-table-setup.sql
 
 #Start Server
+cd $KYLIN_HOME/bin
 source kylin.sh start
 
