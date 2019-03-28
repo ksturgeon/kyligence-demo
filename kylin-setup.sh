@@ -14,6 +14,9 @@ export KAFKA_HOME=/opt/mapr/kafka/kafka-1.0.1
 hadoop fs -mkdir /kylin
 hadoop fs -chown mapr /kylin
 
+#Copy license file over
+cp LICENSE $KYLIN_HOME/LICENSE
+
 #Set up the "minimal" perf profile:
 rm -f $KYLIN_HOME/conf/profile
 ln -sfn $KYLIN_HOME/conf/profile_min $KYLIN_HOME/conf/profile
