@@ -38,10 +38,8 @@ cd $KYLIN_HOME/bin
 source sample.sh
 
 #Load yelp tables into hive
-cd ~/kyligence-demo
-hive -f hive-table-setup.sql
+#hive -f ~/kyligence-demo/hive-table-setup.sql
 
 #Start Server
-cd $KYLIN_HOME/bin
 source kylin.sh start
 
