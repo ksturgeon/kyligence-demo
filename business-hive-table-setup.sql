@@ -5,7 +5,6 @@ DROP TABLE IF EXISTS stage;
 CREATE EXTERNAL TABLE stage(
 business_id string COMMENT 'Business ID',
 address string COMMENT 'Street Address',
-categories array<string> COMMENT 'Business categories',
 city string COMMENT 'Address City',
 name string COMMENT 'Business Name',
 review_count int COMMENT 'Number of reviews',
@@ -22,7 +21,6 @@ DROP TABLE IF EXISTS yelp_business;
 CREATE TABLE yelp_business(
 business_id string COMMENT 'Business ID',
 address string COMMENT 'Street Address',
-categories array<string> COMMENT 'Business categories',
 city string COMMENT 'Address City',
 name string COMMENT 'Business Name',
 review_count int COMMENT 'Number of reviews',
@@ -32,7 +30,7 @@ postal_code string COMMENT 'Address Postal Code')
 STORED BY 'org.apache.hadoop.hive.maprdb.json.MapRDBJsonStorageHandler' 
 TBLPROPERTIES("maprdb.table.name" = "/demo-tables/business","maprdb.column.id" = "business_id");
 
-INSERT OVERWRITE TABLE yelp_review SELECT business_id, address, categories, city, name, review_count, stars, state, postal_code
+INSERT OVERWRITE TABLE yelp_review SELECT business_id, address, city, name, review_count, stars, state, postal_code
 FROM stage;
 
 DROP TABLE STAGE;
