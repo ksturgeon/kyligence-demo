@@ -19,7 +19,7 @@ CREATE EXTERNAL TABLE yelp_user (
 user_id string COMMENT 'User ID',
 name string COMMENT 'First Name',
 review_count int COMMENT 'Number of Reviews',
-yelping_since timestamp COMMENT 'Yelping Since',
+yelping_since string COMMENT 'Yelping Since',
 friends array<string> COMMENT 'Friends list',
 useful int COMMENT 'Useful Reviews',
 funny int COMMENT 'Funny Reviews',
@@ -30,6 +30,8 @@ average_stars float COMMENT 'Average Stars')
 STORED BY 'org.apache.hadoop.hive.maprdb.json.MapRDBJsonStorageHandler'
 TBLPROPERTIES("maprdb.table.name" = "/demo-tables/user","maprdb.column.id" = "user_id");
 
+ALTER TABLE yelp_user CHANGE yelping_since yelping_since date;
+
 DROP TABLE IF EXISTS yelp_review;
 
 CREATE EXTERNAL TABLE yelp_review (
@@ -37,10 +39,13 @@ review_id string COMMENT 'Review ID',
 user_id string COMMENT 'Reviewing User ID',
 business_id string COMMENT 'Business ID',
 stars float COMMENT 'Stars Rating',
-`date` timestamp COMMENT 'Review Date',
+`date` string COMMENT 'Review Date',
 text string COMMENT 'Review Text',
 useful int COMMENT 'Useful',
 funny int COMMENT 'Funny',
 cool int COMMENT 'Cool')
 STORED BY 'org.apache.hadoop.hive.maprdb.json.MapRDBJsonStorageHandler'
 TBLPROPERTIES("maprdb.table.name" = "/demo-tables/review","maprdb.column.id" = "review_id");
+
+ALTER TABLE yelp_review CHANGE `date` r_date date;
+
