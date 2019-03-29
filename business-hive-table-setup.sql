@@ -30,7 +30,7 @@ postal_code string COMMENT 'Address Postal Code')
 STORED BY 'org.apache.hadoop.hive.maprdb.json.MapRDBJsonStorageHandler' 
 TBLPROPERTIES("maprdb.table.name" = "/demo-tables/business","maprdb.column.id" = "business_id");
 
-INSERT OVERWRITE TABLE yelp_review SELECT business_id, address, city, name, review_count, stars, state, postal_code
+INSERT OVERWRITE TABLE yelp_business SELECT business_id, address, city, name, review_count, stars, state, postal_code
 FROM stage;
 
 DROP TABLE STAGE;
