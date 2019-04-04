@@ -30,7 +30,6 @@ average_stars float COMMENT 'Average Stars')
 STORED BY 'org.apache.hadoop.hive.maprdb.json.MapRDBJsonStorageHandler'
 TBLPROPERTIES("maprdb.table.name" = "/demo-tables/user","maprdb.column.id" = "user_id");
 
-ALTER TABLE yelp_user CHANGE yelping_since yelping_since date;
 
 DROP TABLE IF EXISTS yelp_review;
 
@@ -47,5 +46,4 @@ cool int COMMENT 'Cool')
 STORED BY 'org.apache.hadoop.hive.maprdb.json.MapRDBJsonStorageHandler'
 TBLPROPERTIES("maprdb.table.name" = "/demo-tables/review","maprdb.column.id" = "review_id");
 
-ALTER TABLE yelp_review CHANGE `date` r_date date;
 
