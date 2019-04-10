@@ -32,6 +32,13 @@ echo "CLDB Master is ready, continuing startup for $MAPR_CLUSTER ..."
 echo "Executing Kyligence Setup and sample data load"
 su mapr -c 'source kylin-setup.sh'
 
+# Check that the Kyligence is up and running.
+until $(curl --output /dev/null --silent --head --fail http://localhost:7070/kylin/#/access/login); do
+  printf '.'
+  sleep 5
+done
+
+echo "CLDB Master is ready, continuing startup for $MAPR_CLUSTER ..."
 #Setting up Kyligence admin and cube build rest calls
 echo "Executing REST calls to Kyligence"
 su mapr -c 'source rest-calls.sh'
