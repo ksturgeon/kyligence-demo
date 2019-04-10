@@ -8,7 +8,7 @@ curl --request PUT \
   --header 'Authorization: Basic QURNSU46S1lMSU4=' \
   --header 'Content-Type: application/json;charset=utf-8' \
   --header 'cache-control: no-cache' \
-  --data '{\n  "password": "Password1!",\n  "disabled": false,\n  "authorities": ["ROLE_ADMIN","ALL_USERS"]\n\n}'
+  --data '{"password": "Password1!","disabled": false,"authorities": ["ROLE_ADMIN","ALL_USERS"]}'
 
 #Kick off the build job
 curl --request PUT \
@@ -18,4 +18,4 @@ curl --request PUT \
   --header 'Authorization: Basic QURNSU46UGFzc3dvcmQxIQ==' \
   --header 'Content-Type: application/json;charset=utf-8' \
   --header 'cache-control: no-cache' \
-  --data '{\n    "startTime": 0,\n    "endTime": 0,\n    "buildType": "BUILD"\n}'
+  --data '{"startTime": 0,"endTime": 0,"buildType": "BUILD"}'
