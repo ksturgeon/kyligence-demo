@@ -28,8 +28,21 @@ echo "CLDB Master is ready, continuing startup for $MAPR_CLUSTER ..."
 # YOUR DEMO CODE STARTS HERE
 # Put your customer demo stuff below this line to continue to be executed or in the "demo" directory under customer-jobs.sh
 
-# Simple test to list volume informaiton over REST API - This is a code place to start putting your code, hint, hint.
-curl -sSk -X POST -u ${MAPR_ADMIN}:${MAPR_ADMIN_PASS} ""${MCS_URL}/rest/volume/list"" >> ~/test.json
+#Set up Kyligence
+echo "Executing Kyligence Setup and sample data load"
+su mapr -c 'source kylin-setup.sh'
+
+#Setting up Kyligence admin and cube build rest calls
+echo "Executing REST calls to Kyligence"
+su mapr -c 'source rest-calls.sh'
+
+#Set up cluster for yelp data
+echo "Executing cluster setup"
+su mapr -c 'source cluster-setup.sh'
+
+#Set up hive tables and views
+echo "setting up hive tables for yelp data"
+su mapr -c 'hive -f hive-table-setup.sql'
 
 # You should always end with a good exit :)
 exit 0
