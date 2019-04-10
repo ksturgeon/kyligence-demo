@@ -1,3 +1,5 @@
+CREATE DATABASE yelp_views;
+
 DROP TABLE IF EXISTS yelp_business;
 
 CREATE EXTERNAL TABLE yelp_business (
@@ -46,4 +48,43 @@ cool int COMMENT 'Cool')
 STORED BY 'org.apache.hadoop.hive.maprdb.json.MapRDBJsonStorageHandler'
 TBLPROPERTIES("maprdb.table.name" = "/demo-tables/review","maprdb.column.id" = "review_id");
 
+CREATE OR REPLACE VIEW yelp_views.v_business
+AS SELECT
+business_id,
+address,
+categories,
+city,
+name,
+review_count,
+stars,
+state, 
+postal_code 
+FROM default.yelp_business;
+
+CREATE OR REPLACE VIEW yelp_views.v_user
+AS SELECT
+user_id,
+name,
+review_count,
+cast(yelping_since as DATE),
+friends,
+useful,
+funny,
+cool,
+fans,
+elite,
+average_stars
+FROM default.yelp_user;
+
+CREATE OR REPLACE VIEW yelp_views.v_reviews
+AS SELECT
+review_id,
+user_id,
+business_id,
+stars,
+cast(`date` as DATE) r_date,
+useful,
+funny,
+cool
+FROM default.yelp_review;
 
