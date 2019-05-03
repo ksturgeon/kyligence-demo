@@ -10,7 +10,7 @@ curl --request POST \
 curl --request GET \
   --url http://mdn:8047/storage/hive/enable/true
 
-
+#Set drill opts:
 curl --request POST \
   --url http://mdn:8047/query.json \
   --header 'Content-Type: application/json' \
